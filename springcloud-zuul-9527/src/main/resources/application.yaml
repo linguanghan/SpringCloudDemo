@@ -1,0 +1,26 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: springcloud-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
+  instance:
+    instance-id: zull9527.com
+    prefer-ip-address: true
+
+info:
+  app.name: jd-springcloud
+  company.name: www.jdspringcloud.com
+
+
+zuul:
+  routes:
+    mydept.serviceId: springcloud-provider-dept-hystrix
+    mydept.path: /mydept/**
+  ignored-services: springcloud-provider-dept-hystrix # 不能再使用這個路徑進行訪問了
+  prefix: /jd

@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "hystrix.dashboard.proxy-stream-allow-list",
+      "type": "java.lang.String",
+      "description": "Description for hystrix.dashboard.proxy-stream-allow-list."
+    }
+  ] }

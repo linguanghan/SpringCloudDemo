@@ -1,0 +1,31 @@
+server:
+  port: 8003
+# mybatis配置
+mybatis:
+  type-aliases-package: com.jd.springcloud.pojo
+  #  config-location: classpath:mybatis/mybatis-config.xml #可以不要
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+# spring配置
+spring:
+  application:
+    name: springcloud-provider-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/db03?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 1234567
+    driver-class-name: com.mysql.jdbc.Driver
+
+# Eureka的配置，服务注册到哪里
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
+
+#info配置
+info:
+  app.name: demo-springcloud
+  company.name: com.jd
